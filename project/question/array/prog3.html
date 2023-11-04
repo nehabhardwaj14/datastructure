@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="array.css">
+</head>
+<body>
+  <h1>PROGRAM: </h1>
+    <pre>
+        #include &ltstdio.h>
+         #include &ltconio.h>
+           void main()
+           {
+           int i,arr1[5],arr2[5];
+           clrscr();
+           printf("enter values in first array:");
+           for(i=0;i&lt5;i++)
+           {
+           scanf("%d",&arr1[i]);
+           }
+           for(i=0;i&lt5;i++)
+            {
+           arr2[i]=arr1[i];
+             }
+             printf("second array :");
+           for(i=0;i&lt5;i++)
+           {
+           printf("%d\n",arr2[i]);
+           }
+           delay(2000);
+          }
+    </pre>
+        <h1>output</h1>
+        <pre>
+          enter values in first array:45
+          67
+          34
+          23
+          90
+          copied into second array :45
+           67
+           34
+           23
+           90
+        </pre>
+</body>
+</html>

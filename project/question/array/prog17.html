@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="array.css">
+</head>
+<body>
+  <h1>PROGRAM: </h1>
+    <pre>
+        #include &ltstdio.h>
+          #include &ltconio.h>
+          //merge the two sorted array in one array but in sorted order
+               void sort(int arr[],int size){
+               int i,j,temp;
+               for(i=0;i&ltsize;i++){
+               for(j=i+1;j&ltsize;j++){
+               if(arr[i]>arr[j]){
+               temp=arr[i];
+               arr[i]=arr[j];
+               arr[j]=temp;
+               }}}
+               }
+               void main()
+               {
+               int arr1[5],arr2[5],arr3[10],i,j;
+               clrscr();
+               for(i=0;i&lt5;i++)
+               {
+               printf("enter value in 1 array at %d: ",i+1);
+               scanf("%d",&arr1[i]);
+               }
+               printf("\n");
+                for(i=0;i&lt5;i++)
+               {
+               printf("enter value in 2 array at %d: ",i+1);
+               scanf("%d",&arr2[i]);
+               }
+                 sort(arr1,5);
+                 sort(arr2,5);
+                 for(i=0;i&lt5;i++) {
+             arr3[i]=arr1[i]; }
+             for(j=0;j&lt5;j++) {
+             arr3[i+j]=arr2[j]; }
+             sort(arr3,10);
+             printf("\n");
+            
+             for(i=0;i&lt10;i++){
+             printf("merged array: %d\n",arr3[i]);
+             }
+             delay(5000);
+             }
+             </pre>
+           <h1>output</h1>
+           <pre>
+           enter value in 1 array at 1: 90
+           enter value in 1 array at 2: 89
+           enter value in 1 array at 3: 87
+           enter value in 1 array at 4: 88
+           enter value in 1 array at 5: 56
+
+           enter value in 2 array at 1: 45
+           enter value in 2 array at 2: 4
+           enter value in 2 array at 3: 23
+           enter value in 2 array at 4: 12
+           enter value in 2 array at 5: 10
+
+           merged array: 4
+           
+           merged array: 10
+           
+           merged array: 12
+           
+           merged array: 23
+           
+           merged array: 45
+           
+           merged array: 56
+           
+           merged array: 87
+           
+           merged array: 88
+           
+           merged array: 89
+           
+           merged array: 90  
+       </pre>
+</body>
+</html>

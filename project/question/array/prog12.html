@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="array.css">
+</head>
+<body>
+  <h1>PROGRAM: </h1>
+    <pre>
+        #include &ltstdio.h>
+          #include &ltconio.h>
+          // enter an from user and remove the duplicate values and fill with zero.
+          void main() {
+              int i,arr[6],j;
+              clrscr();
+              for(i=0;i&lt6;i++){
+              printf("enter value at %d position:\n",i+1);
+               scanf("%d",&arr[i]);
+                 }
+                 for(i=0;i&lt6;i++)  {
+                 for(j=i+1;j&lt6;j++){
+                 if(arr[i]==arr[j]){
+                 arr[j]=0;
+               }}}
+               printf("array after removing duplicate and fill with zero:\n");
+               for(i=0;i&lt6;i++){
+               printf("%d\n",arr[i]);
+               }
+              delay(5000);
+              }
+              </pre>
+            <h1>output</h1>
+            <pre>
+            enter value at 1 position:
+            2
+            enter value at 2 position:
+            2
+            enter value at 3 position:
+            4
+            enter value at 4 position:
+            5
+            enter value at 5 position:
+            6
+            enter value at 6 position:
+            5
+            array after removing duplicate and fill with zero:
+            2
+            0
+            4
+            5
+            6
+            0
+       </pre>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="array.css">
+</head>
+<body&lt
+  <h1>PROGRAM: </h1>
+    <pre>
+        #include &ltstdio.h>
+          #include &ltconio.h>
+            //enter an array from user and count the duplicate values
+          
+            void main()
+            {
+            int arr[10],i,count,avail=0,j,temp;
+              clrscr();
+              for(i=0;i&lt10;i++)
+              {  printf("enter value at position %d \n",i+1);
+              scanf("%d",&arr[i]);
+              }
+              for(i=0;i&lt10;i++){
+              for(j=i+1;j&lt10;j++){
+              if(arr[i]>arr[j]){
+              temp=arr[i];
+              arr[i]=arr[j];
+              arr[j]=temp;
+              }}}
+                printf("duplicate values:\n");
+                for(i=0;i<10;i++)
+                {
+                count=1;
+                while(arr[i]==arr[i+1])
+                {
+                count++;
+                i++;
+                avail=1;
+                }
+                if(count>1){
+                printf(" %d is present %d times \n",arr[i],count);
+                }
+          
+                }
+                if(!avail){
+                printf("no duplicate values");
+                }
+                delay(5000);
+                }
+              </pre>
+            <h1>output</h1>
+            <pre>
+              enter value at position 1 
+              2
+              enter value at position 2 
+              3
+              enter value at position 3 
+              4
+              enter value at position 4 
+              2
+              enter value at position 5 
+              5
+              enter value at position 6 
+              4
+              enter value at position 7 
+              2
+              enter value at position 8 
+              6
+              enter value at position 9 
+              4
+              enter value at position 10 
+              1
+              duplicate values:
+               2 is present 3 times 
+               4 is present 3 times  
+       </pre>
+</body>
+</html>

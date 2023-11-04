@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="array.css">
+</head>
+<body>
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include &ltstdio.h>
+          #include &ltconio.h>
+          // enter an array from user and add all the values
+             void main()
+              {
+              int i,arr[10],sum=0;
+              clrscr();
+              for(i=0;i&lt10;i++)
+              {
+              printf("enter value in array at position %d: ",i+1);
+               scanf("%d",&arr[i]);
+               sum+=arr[i];
+               }
+               printf("sum of all values =%d\n",sum);
+               delay(5000);
+               }
+    </pre>
+            <h1>output</h1>
+            <pre>
+            enter value in array at position 1: 45
+            enter value in array at position 2: 67
+            enter value in array at position 3: 89
+            enter value in array at position 4: 09
+            enter value in array at position 5: 98
+            enter value in array at position 6: 65
+            enter value in array at position 7: 67
+            enter value in array at position 8: 66
+            enter value in array at position 9: 45
+            enter value in array at position 10: 34
+            sum of all values =585   
+       </pre>
+</body>
+</html>

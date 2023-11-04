@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="array.css">
+</head>
+<body>
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include &ltstdio.h>
+          #include &ltconio.h>
+          // to find the local maxima in the array
+             void main()
+             {
+             int arr[5],i;
+             clrscr();
+             for(i=0;i<5;i++)
+             {
+             printf("enter value at %d position:",i+1);
+             scanf("%d",&arr[i]);
+             }
+             for(i=0;i<5;i++){
+             if(arr[i]>arr[i-1] && arr[i]>arr[i+1])
+             printf("local maxima:%d\n",arr[i]);
+             }
+             delay(5000);
+             }
+            </pre>
+           <h1>output</h1>
+           <pre>
+           enter value at 1 position:45
+           enter value at 2 position:67
+           enter value at 3 position:89
+           enter value at 4 position:90
+           enter value at 5 position:77
+           local maxima:90 &lt               
+       </pre>
+
+</body>
+</html>

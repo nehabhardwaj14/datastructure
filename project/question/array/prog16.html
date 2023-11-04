@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="array.css">
+</head>
+<body>
+  <h1>PROGRAM: </h1>
+    <pre>
+        #include &ltstdio.h>
+          #include &ltconio.h>
+          //enter two arrays from user and check they are same or not
+              void sort(int arr[],int size){
+              int i,j,temp;
+               for(i=0;i&ltsize;i++){
+                 for(j=i+1;j&ltsize;j++){
+                 if(arr[i] > arr[j]){
+            temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+            }}}
+              }
+                 void main()
+             {
+             int i,j,temp,arr[5],arr2[5];
+             clrscr();
+             printf("enter values in 1st array\n");
+               for(i=0;i&lt5;i++){
+               printf(" enter values at position :%d\n",i+1);
+               scanf("%d",&arr[i]);
+               }
+               printf("enter values in second array:\n");
+                for(i=0;i&lt5;i++){
+               printf("enter value at position : %d\n",i+1);
+               scanf("%d",&arr2[i]);
+               }
+            sort(arr,5);
+            sort(arr2,5);
+              for(i=0;i&lt5;i++){
+              if(arr[i]!=arr2[i])
+            {
+            printf("both arrays are not same\n");
+            break;
+            } }
+            if(i==5){
+            printf("both arrays are  same");
+          
+            }
+            delay(2000);
+                 }
+                 </pre>
+           <h1>output</h1>
+           <pre> 
+           enter values in 1st array
+           enter values at position 1 :
+          9
+          enter values at position 2 :
+          8
+          enter values at position 3 :
+          7
+          enter values at position 4 :
+          5
+          enter values at position 5 :
+          1
+          enter values in second array:
+          enter value at position 1 :
+          9
+          enter value at position 2 :
+          8
+          enter value at position 3 :
+          7
+          enter value at position 4 :
+          5
+          enter value at position 5 :
+          1
+          both arrays are  same     
+       </pre>
+</body>
+</html>

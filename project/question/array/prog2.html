@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="array.css">
+</head>
+<body>
+  <h1>PROGRAM: </h1>
+    <pre>
+        #include &ltstdio.h>
+          #include &ltconio.h>
+            void main()
+            {
+            int i,arr[5];
+            clrscr();
+            printf("enter value in the array:");
+            for(i=0;i&lt5;i++)
+            {
+            scanf("%d",&arr[i]);
+            }
+            for(i=4;i>=0;i--)
+            {
+            printf("reverse of the array is :%d \n",arr[i]);
+            }
+            delay(2000);
+            }
+    </pre>
+         <h1>output</h1>
+         <pre>
+         enter value in the array:23
+         56
+         78
+         98
+         45
+         reverse of the array is :45 
+         reverse of the array is :98 
+         reverse of the array is :78 
+         reverse of the array is :56 
+         reverse of the array is :23 
+          </pre>
+</body>
+</html>

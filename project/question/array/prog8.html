@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="array.css">
+</head>
+<body>
+  <h1>PROGRAM: </h1>
+    <pre>
+        #include &ltstdio.h>
+          #include &ltconio.h>
+            //enter an array from user and find maximum and minimum value
+             void main()
+             {
+             int i,arr[5],max,min;
+             clrscr();
+              for(i=0;i<5;i++)
+              {
+               printf("enter value at position %d:\n",i+1);
+               scanf("%d",&arr[i]);
+              }
+              max=arr[0];
+              min=arr[0];
+              for(i=0;i&lt5;i++)
+              {
+              if(max&ltarr[i])
+              max=arr[i];
+              if(min>arr[i])
+              min=arr[i];
+              }
+              printf("maximum value is:%d\n minimum value is:%d",max,min);
+              delay(5000);
+              }
+            </pre>
+             <h1>output</h1>
+             <pre>
+             enter value at position 1:
+             45
+             enter value at position 2:
+             78
+             enter value at position 3:
+             34
+             enter value at position 4:
+             12
+             enter value at position 5:
+             9
+             maximum value is:78
+              minimum value is:9 
+       </pre>
+</body>
+</html>

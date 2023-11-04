@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="array.css">
+    
+</head>
+<body>
+  <h1>PROGRAM: </h1>
+    <pre>
+        #include &ltstdio.h>
+          #include &ltconio.h>
+          // enter an array from user and print all the pallindrome numbers
+            int pallindrome(int num){
+             int rev=0,n=num;
+             while(num!=0)
+             {
+             rev=(rev*10)+(num%10);
+             num/=10;
+             }
+             if(n==rev)
+             {  return 1;  }
+             return 0;
+             }
+               void main()
+               {
+               int arr[10],i,num;
+               clrscr();
+               for(i=0;i&lt10;i++)
+               {
+               printf("enter value of position%d\n",i+1);
+               scanf("%d",&arr[i]);
+               }
+              for(i=0;i&lt10;i++)
+              {
+              if(pallindrome(arr[i]))
+              printf("%d is palindrome\n",arr[i]);
+              }
+              delay(5000);
+               }
+            </pre>
+            <h1>output</h1>
+            <pre>
+            enter value of position1
+            12
+            1enter value of position2
+            22
+            enter value of position3
+            33
+            enter value of position4
+            14
+            enter value of position5
+            111
+            enter value of position6
+            1221
+            enter value of position7
+            67
+            enter value of position8
+            89
+            enter value of position9
+            88
+            enter value of position10
+            90
+            22 is palindrome
+            33 is palindrome
+            111 is palindrome
+            1221 is palindrome
+            88 is palindrome
+               
+       </pre>
+</body>
+</html>
