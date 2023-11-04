@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="2darray.css">
+</head>
+<body>
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include&ltstdio.h>
+        #include&ltconio.h>
+          //display matrix of 4rows and 2col
+            void display(int matrix[4][2])
+              {
+            int i,j;
+            for(i=0;i&lt4;i++)
+             {
+              for(j=0;j&lt2;j++)
+               {
+                 printf("%d\t",matrix[i][j]);
+               }
+               printf("\n");
+             }
+              }
+            void main()
+              {
+            int matrix[4][2],i,j;
+            clrscr();
+            for(i=0;i&lt4;i++)
+             {
+              for(j=0;j&lt2;j++)
+               {
+                 printf("enter row %d column %d value:",i+1,j+1);
+                 scanf("%d",&matrix[i][j]);
+               }
+             }
+             display(matrix);
+             delay(5000);
+             }
+    </pre>
+    <h3>OUTPUT:</h3>
+    <pre> 
+        enter row 1 column 1 value:78
+        enter row 1 column 2 value:89
+        enter row 2 column 1 value:56
+        enter row 2 column 2 value:34
+        enter row 3 column 1 value:90
+        enter row 3 column 2 value:23
+        enter row 4 column 1 value:18
+        enter row 4 column 2 value:99
+        78	89	
+        56	34	
+        90	23	
+        18	99
+    </pre>
+</body>
+</html>

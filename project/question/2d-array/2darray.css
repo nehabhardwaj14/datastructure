@@ -1,0 +1,7 @@
+.background li a{
+    text-decoration: none;
+    color:black;
+}
+.background li a:hover{
+  color:peru ;
+}

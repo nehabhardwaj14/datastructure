@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="2darray.css">
+</head>
+<body>
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include&ltstdio.h>
+        #include&ltconio.h>
+             // 2-D array : addition of two matrixes
+           void main()
+           {
+           int i,j,arr1[3][3],arr2[3][3],arr3[3][3];
+           int r,c;
+           clrscr();
+           printf("enter rows and cols size \n");
+           scanf("%d%d",&r,&c);
+           printf("enter arr1 %d*%d elements\n",r,c);
+           for(i=0;i&ltr;i++){
+           for(j=0;j&ltc;j++){
+           scanf("%d",&arr1[i][j]);
+           }}
+            printf("enter arr2 %d*%d elements\n",r,c) ;
+           for(i=0;i&ltr;i++){
+           for(j=0;j&ltc;j++){
+           scanf("%d",&arr2[i][j]);
+           }}
+        
+           printf("addition of matrixes:\n");
+           for(i=0;i&ltr;i++){
+           for(j=0;j&ltc;j++){
+           arr3[i][j]=arr1[i][j]+arr2[i][j];
+           printf("%d\t",arr3[i][j]);
+           }
+           printf("\n");
+           }
+           delay(5000);
+           }
+    </pre>
+           <h1>OUTPUT</h1>
+           <pre>
+           enter rows and cols size 
+           3 3
+           enter arr1 3*3 elements
+           2 8 9
+           3 6 1
+           8 9 0
+           enter arr2 3*3 elements
+           3 6 2
+           8 5 0
+           7 8 6
+           addition of matrixes:
+           5	14	11	
+           11	11	1	
+           15	17	6	
+           
+    </pre>
+</body>
+</html>

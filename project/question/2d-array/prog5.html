@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="2darray.css">
+</head>
+<body>
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include&ltstdio.h>
+        #include&ltconio.h>
+         // copying one matrix to another
+             void display(int matrix[2][2])
+              {
+            int i,j;
+            for(i=0;i&lt2;i++)
+             {
+              for(j=0;j&lt2;j++)
+               {
+                 printf("%d\t",matrix[i][j]);
+               }
+               printf("\n");
+             }
+              }
+              void copy(int matrix1[2][2],int matrix2[2][2])
+             {
+               int i,j;
+            for(i=0;i&lt2;i++)
+             {
+              for(j=0;j&lt2;j++)
+               {
+                 matrix2[i][j]=matrix1[i][j];
+               }
+             }
+            }
+            void main()
+              {
+            int matrix[2][2],copym[2][2],i,j;
+            clrscr();
+            for(i=0;i&lt2;i++)
+             {
+              for(j=0;j&lt2;j++)
+               {
+        
+                 printf("enter element in %d*%d :\n",i+1,j+1);
+                 scanf("%d",&matrix[i][j]);
+               }
+             }
+             printf("entered matrix\n");
+             display(matrix);
+             copy(matrix,copym);
+             printf("copied matrix \n");
+             display(copym);
+        
+             delay(5000);
+             }
+    </pre>
+    <h3>OUTPUT:</h3>
+    <pre>
+        enter element in 1*1 :
+        67
+        enter element in 1*2 :
+        89
+        enter element in 2*1 :
+        45
+        enter element in 2*2 :
+        89
+        entered matrix
+        67	89	
+        45	89	
+        copied matrix 
+        67	89	
+        45	89	
+        
+    </pre>
+</body>
+</html>

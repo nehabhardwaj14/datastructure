@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="2darray.css">
+</head>
+<body>
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include&ltstdio.h>
+        #include&ltconio.h>
+            //2-D array: scalar multiplication of matrix
+        
+           void main()
+           {
+             int i,j,arr1[3][3],scalar;
+           int r,c;
+           clrscr();
+           printf("enter rows and cols size \n");
+           scanf("%d%d",&r,&c);
+           printf("enter the elements\n");
+           for(i=0;i&ltr;i++){
+           for(j=0;j&ltc;j++){
+           scanf("%d",&arr1[i][j]);
+           }}
+            //scalar multiplication
+            printf("enter value of scalar:");
+            scanf("%d",&scalar);
+            for(i=0;i&ltr;i++){
+            for(j=0;j&ltc;j++){
+             arr1[i][j]*=scalar;  }}
+            printf("after scalar multiplication:\n");
+           for(i=0;i&ltr;i++){
+           for(j=0;j&ltc;j++){
+           printf("%d\t",arr1[i][j]);
+           }
+           printf("\n");
+            }
+           delay(5000);
+           }
+    </pre>
+           <h1>OUTPUT</h1>
+           <pre>
+           enter rows and cols size 
+           3 3
+           enter the elements
+           3 2 9 
+           7 5 6
+           3 0 6
+           enter value of scalar:2
+           after scalar multiplication:
+           6	4	18	
+           14	10	12	
+           6	0	12	
+    </pre>
+</body>
+</html>
