@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stack.css">
+</head>
+<body>
+        
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include&ltstdio.h>
+            #include&ltconio.h>
+            #include&ltalloc.h>
+              // evaluation of postfix expression
+                  struct Node
+                  {
+                float data;
+                struct Node *next;
+                   };
+                   typedef struct Node node;
+            
+                   int isempty(node *top)
+                {
+                 if(top==NULL)
+                  {
+                    return 1;
+                   }
+                 return 0;
+                }
+                 int isfull(node *ptr)
+                   {
+                 if(ptr==NULL)
+                   {
+                      return 1;
+                    }
+                   return 0;
+                 }
+                 float *push(node **top,float val)
+                {
+                  node *nn;
+                  nn=(node *)malloc(sizeof(node));
+                  if(isfull(nn))
+                    {
+                      return NULL;
+                     }
+                   nn->data=val;
+                   nn->next=*top;
+                   *top=nn;
+                   return &(nn->data);
+                  }
+                   int pop(node **top)
+                 {
+                   node *temp;
+                   if(isempty(*top))
+                     {
+                       return 0;
+                      }
+                      temp=*top;
+                      (*top)=temp->next;
+                      free(temp);
+                      return 1;
+                   }
+                   float *peek(node *top)
+                 {
+                   if(isempty(top))
+                     {
+                       return NULL;
+                      }
+                      return &(top->data);
+                  }
+                 int ioperator(char c)
+                {
+                  return(c=='+' || c=='-' || c=='*' || c=='/');
+                }
+                  int operand(char c)
+                {
+                 return((c>='0' && c&lt='9'));
+                }
+                  int chtoint(char c)
+                {
+                  return(c-'0');
+                 }
+                 float eval(char opr,float op1,float op2)
+                   {
+                  if(opr=='+')
+                    return(op1+op2);
+                  else if(opr=='-')
+                     return(op1-op2);
+                  else if(opr=='*')
+                     return(op1*op2);
+                  else if(opr=='/')
+                     return(op1/op2);
+                  return 0;
+                }
+                 float postfeval(char expression[])
+                   {
+                   node *top=NULL;
+                   int j=0;
+                   while(expression[j]!='\0')
+                    {
+                      if(operand(expression[j]))
+                    {
+                      push(&top,chtoint(expression[j]));
+                    }
+                      else if(ioperator(expression[j]))
+                    {
+                      float a=*(peek(top->next));
+                      float b=*(peek(top));
+                      pop(&top);
+                      pop(&top);
+                      push(&top, eval(expression[j],a,b));
+                     }
+                     j++;
+                      }
+                      j=*(peek(top));
+                      free(top);
+                      return j;
+                   }
+                 void main()
+                 {
+                   char exp[30];
+                clrscr();
+                printf("enter infix expression\n");
+                gets(exp);
+                printf("evaluated postfix expression is %f",postfeval(exp));
+                delay(5000);
+                  }
+    </pre>
+    <h3>OUTPUT:</h3>
+    <pre>
+        enter infix expression                                                          
+        654*+6+                                                                         
+        evaluated postfix expression is 32.000000
+    </pre>
+</body>
+</html>

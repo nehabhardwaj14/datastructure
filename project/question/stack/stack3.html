@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stack.css">
+</head>
+<body>
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include&ltstdio.h>
+        #include&ltconio.h>
+        #include&ltalloc.h>
+          // dynamically stack operation on integer
+            struct Node{
+              int data;
+              struct node *next;
+             };
+              typedef struct Node node;
+        
+            int isempty(node *top)
+              {
+            if(top==NULL)
+              {
+                return 1;
+               }
+             return 0;
+               }
+             int isfull(node *ptr)
+               {
+             if(ptr==NULL)
+               {
+                  return 1;
+                }
+               return 0;
+             }
+            int *push(node **top,int val)
+             {
+              node *nn;
+              nn=(node *)malloc(sizeof(node));
+              if(isfull(nn))
+                {
+                  return NULL;
+                }
+                nn->data=val;
+                nn->next=*top;
+                *top=nn;
+                return &(nn->data);
+             }
+            int pop(node **top)
+             {
+               node *temp;
+               if(isempty(*top))
+                 {
+                   return 0;
+                 }
+                  temp=*top;
+                  (*top)=temp->next;
+                  free(temp);
+                  return 1;
+             }
+               int *peek(node *top)
+             {
+               if(isempty(top))
+                 {
+                   return NULL;
+                  }
+                  return &(top->data);
+              }
+            int main()
+              {
+                node *top=NULL;
+                int *val,valid,value;
+                char choose;
+                clrscr();
+                 do
+                 {
+                printf("\npress1: push\npress2: pop\npress3: peek\npress4: exit\n");
+                choose=getch();
+                if(choose=='1')
+                  {
+                     printf("enter value:");
+                     scanf("%d",&value);
+                     val=push(&top,value);
+                     if(val==NULL)
+                       {
+                     printf("stack is full");
+                       }
+                     else{
+                      printf("pushed successfully\n");
+                       }
+                     }
+                  else if(choose=='2')
+                    {
+                      valid=pop(&top);
+                       if(valid)
+                    {
+                      printf("poped successfully\n");
+                    }
+                       else{
+                       printf("stack is empty");
+                     }
+                       }
+                  else if(choose=='3')
+                     {
+                       if(val==NULL)
+                     {
+                       printf("stack is empty");
+                      }
+                    else{
+                       printf("top element in stack is%d\n",*peek(top));
+                     }
+                       }
+                  else if(choose=='4')
+                    {
+                      printf("exit the program");
+                     }
+                  else
+                    printf("invalid choice");
+                }
+                  while(choose!='4');
+                   while(top!=NULL)
+                 {
+                   pop(&top);
+                  }
+                 delay(5000);
+                 return 0;
+                   }
+    </pre>
+    <h3>OUTPUT:</h3>
+    <pre>
+      press1: push                                                                    
+      press2: pop                                                                     
+      press3: peek                                                                    
+      press4: exit                                                                    
+      enter value:90                                                                  
+      pushed successfully                                                             
+                                                                                      
+      press1: push                                                                    
+      press2: pop                                                                     
+      press3: peek                                                                    
+      press4: exit                                                                    
+      poped successfully                                                              
+                                                                                      
+      press1: push                                                                    
+      press2: pop                                                                     
+      press3: peek                                                                    
+      press4: exit                                                                    
+      top element in stack is0                                                        
+                                                                                      
+      press1: push                                                                    
+      press2: pop                                                                     
+      press3: peek                                                                    
+      press4: exit                                                                    
+      exit the program 
+    </pre>
+</body>
+</html>

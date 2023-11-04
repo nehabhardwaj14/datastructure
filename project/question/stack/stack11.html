@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stack.css">
+</head>
+<body>
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include&ltstdio.h>
+            #include&ltconio.h>
+            #include&ltalloc.h>
+              // evaluation of prefix expression
+                  struct Node
+                  {
+                float data;
+                struct Node *next;
+                   };
+                   typedef struct Node node;
+            
+                   int isempty(node *top)
+                  {
+                if(top==NULL)
+                  {
+                    return 1;
+                   }
+                 return 0;
+                   }
+                 int isfull(node *ptr)
+                   {
+                 if(ptr==NULL)
+                   {
+                      return 1;
+                    }
+                   return 0;
+                 }
+                 float *push(node **top,float val)
+                {
+                  node *nn;
+                  nn=(node *)malloc(sizeof(node));
+                  if(isfull(nn))
+                    {
+                      return NULL;
+                     }
+                   nn->data=val;
+                   nn->next=*top;
+                   *top=nn;
+                   return &(nn->data);
+                  }
+                   int pop(node **top)
+                 {
+                   node *temp;
+                   if(isempty(*top))
+                     {
+                       return 0;
+                      }
+                      temp=*top;
+                      (*top)=temp->next;
+                      free(temp);
+                      return 1;
+                   }
+                   float *peek(node *top)
+                 {
+                   if(isempty(top))
+                     {
+                       return NULL;
+                      }
+                      return &(top->data)&lt
+                  }
+                long stlength(char str[])
+                  {
+                    int len;
+                    for(len=0;str[len]!='\0';len++);
+                    return len;
+                   }
+                 int ioperator(char c)
+                {
+                  return(c=='+' || c=='-' || c=='*' || c=='/');
+                }
+                  int operand(char c)
+                {
+                 return((c>='0' && c&lt='9'));
+                }
+                  int chtoint(char c)
+                {
+                  return(c-'0');
+                 }
+                 float eval(char opr,float op1,float op2)
+                   {
+                  if(opr=='+')
+                    return(op1+op2);
+                  else if(opr=='-')
+                     return(op1-op2);
+                  else if(opr=='*')
+                     return(op1*op2);
+                  else if(opr=='/')
+                     return(op1/op2);
+                  return 0;
+                }
+                 float prefeval(char expression[])
+                   {
+                   node *top=NULL;
+                   int upp=stlength(expression)-1;
+                   while(upp>=0)
+                    {
+                      if(operand(expression[upp]))
+                    {
+                      push(&top,chtoint(expression[upp]));
+                    }
+                      else if(ioperator(expression[upp]))
+                    {
+                      float a=*(peek(top->next));
+                      float b=*(peek(top));
+                      pop(&top);
+                      pop(&top);
+                      push(&top, eval(expression[upp],a,b));
+                     }
+                     upp--;
+                      }
+                      upp=*(peek(top));
+                      free(top);
+                      return upp;
+                   }
+                 void main()
+                 {
+                   char exp[30];
+                clrscr();
+                printf("enter pefix expression\n");
+                gets(exp);
+                printf("evaluated postfix expression is %f",prefeval(exp));
+                delay(5000);
+                  }
+    </pre>
+    <h3>OUTPUT:</h3>
+    <pre>
+        enter pefix expression                                                          
+        ++6*654                                                                         
+        evaluated postfix expression is 40.000000
+    </pre>
+</body>
+</html>

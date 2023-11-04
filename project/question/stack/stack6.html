@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stack.css">
+</head>
+<body>
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include&ltstdio.h>
+            #include&ltconio.h>
+            #include&ltalloc.h>
+              // bracket matching using stack
+            
+                int push(char stack[],int size,int val,int i)
+                   {
+                  if(i==size -1)
+                    {
+                      return -1;
+                     }
+                     i++;
+                     stack[i]=val;
+                     return i;
+                 }
+                int pop(char stack[],int i)
+                 {
+                    if(i== -1)
+                     {
+                       return -2;
+                      }
+                      i--;
+                      return i;
+                  }
+                 void main()
+                {
+                   int push(char[],int,int,int);
+                   int pop(char[],int);
+                   char exp[30],stack[30];
+                   int i=-1, ind,j;
+                   clrscr();
+                   printf("enter expression:\n");
+                   gets(exp);
+                   for(j=0; exp[j]!=NULL;j++)
+                     {
+                      if(exp[j]=='{')
+                       {
+                     i=push(stack,30,exp[j],i);
+                       }
+                      if(exp[j]=='}')
+                       {
+                     ind=pop(stack,i);
+                     if(ind== -2)
+                      {
+                        printf("brackets not matching");
+                        break;
+                      }
+                     else{
+                         i=ind;
+                      }
+                    }
+                     }
+                     if(i== -1 && exp[j]!='}')
+                       {
+                     printf("brackets matched\n");
+                       }
+                     else if(i > -1)
+                       {
+                      printf("brackets are not matching");
+                    }
+                    delay(5000);
+                }
+    </pre>
+    <h3>OUTPUT:</h3>
+    <pre>
+        enter expression:                                                               
+        {{hello}{bye}}                                                                  
+        brackets matched   
+    </pre>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stack.css">
+</head>
+<body>
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include<stdio.h>
+            #include<conio.h>
+               //create two integer stacks in a single array
+                   int push1(int stack[],int val,int top,int top2)
+                {
+                 if(top+1==top2)
+                  {
+                   return -1;
+                   }
+                   top++;
+                   stack[top]=val;
+                   return top;
+                 }
+                   int push2(int stack[],int val, int top,int top2)
+                {
+                  if(top+1==top2)
+                   {
+                    return -1;
+                   }
+                   top2--;
+                   stack[top2]=val;
+                   return top2;
+                 }
+                int pop1(int stack[],int top,int size)
+                 {
+                  if(top==-1)
+                   {
+                    return 2;
+                   }
+                   top--;
+                   return top;
+                  }
+                 int pop2(int stack[],int top,int size)
+                  {
+                   if(top==size)
+                    {
+                     return -1;
+                    }
+                    top++;
+                    return top;
+                  }
+                int peek(int stack[],int top,int size)
+                 {
+                  if(top== -1||top==size)
+                   {
+                    return -1;
+                   }
+                   return top;
+                 }
+                int main()
+                 {
+                   int push(int[],int,int,int);
+                   int pop(int[],int,int);
+                   int peek(int[],int,int);
+                   int stack[6],i1=-1,i2=6,val,ind;
+                   char choose,num;
+                   clrscr();
+                   do
+                   {
+                    printf("\npress 1: push\tpress 2:pop\npress 3:peek\tpress 4:exit\n");
+                    choose=getch();
+                    if(choose=='1' ||choose=='2' || choose=='3')
+                      {
+                    printf("\nenter stack number: 1 or 2\n ");
+                    num=getch();
+                      }
+                      if(choose=='1')
+                       {
+                     printf("enter value:\n");
+                     scanf("%d",&val);
+                    if(num=='1')
+                     {
+                      ind=push1(stack,val,i1,i2);
+                      if(ind!= -1)
+                       {
+                        i1=ind;
+                        printf("%d pushed to stack 1 successfully\n",val);
+                       }
+                       else
+                       {
+                        printf("stack 1 is full\n");
+                       }
+                     }
+                      else
+                       {
+                      ind=push2(stack,val,i1,i2);
+                      if(ind!= -1)
+                       {
+                        i2=ind;
+                        printf("%d pushed to stack 2 successfully\n",val);
+                       }
+                      else
+                       {
+                        printf("stack 2 is full\n");
+                       }
+                     }
+                       }
+                     else if(choose=='2')
+                       {
+                    if(num=='1')
+                     {
+                       ind=pop1(stack,i1,6);
+                       if(ind!= -2)
+                        {
+                           i1=ind;
+                           printf("poped from stack 1 successfully\n");
+                         }
+                        else
+                         {
+                        printf("stack 1 is empty\n");
+                          }
+                       }
+                    else
+                     {
+                       ind=pop2(stack,i2,6);
+                        if(ind!=-1)
+                         {
+                        i2=ind;
+                        printf("poped from stack2 successfully\n");
+                         }
+                        else
+                         {
+                           printf("stack 2 is empty\n");
+                         }
+                      }
+                    }
+                       else if(choose=='3')
+                    {
+                      if(num=='1')
+                       {
+                        ind=peek(stack,i1,6);
+                       }
+                      else
+                       {
+                         ind=peek(stack,i2,6);
+                       }
+                      if(ind!=-1)
+                       {
+                        printf("top element of stack %c is %d\n",num,stack[ind]);
+                       }
+                      else
+                       {
+                        printf("stack %c is empty\n",num);
+                       }
+                     }
+                       else if(choose=='4')
+                    {
+                      printf("exit the program\n");
+                    }
+                      else
+                      printf("invalid choice\n");
+                    }
+                   while(choose!='4');
+                   delay(5000);
+                   }
+            
+    </pre>
+    <h3>OUTPUT:</h3>
+    <pre>
+        press 1: push   press 2:pop                                                     
+        press 3:peek    press 4:exit                                                    
+                                                                                        
+        enter stack number: 1 or 2
+        enter value:
+        56                                                                              
+        56 pushed to stack 1 successfully
+
+        press 1: push   press 2:pop                                                     
+        press 3:peek    press 4:exit                                                    
+                                                                                        
+        enter stack number: 1 or 2
+        enter value:
+        78                                                                              
+        78 pushed to stack 2 successfully                                               
+                                                                                
+        press 1: push   press 2:pop                                                     
+        press 3:peek    press 4:exit                                                    
+                                                                                
+        enter stack number: 1 or 2                                                      
+         top element of stack 1 is 56                                                   
+                                                                                
+        press 1: push   press 2:pop                                                     
+        press 3:peek    press 4:exit                                                    
+                                                                                
+        enter stack number: 1 or 2                                                      
+         poped from stack2 successfully                                                 
+                                                                                
+        press 1: push   press 2:pop                                                     
+        press 3:peek    press 4:exit                                                    
+                                                                                
+        enter stack number: 1 or 2                                                      
+         stack 2 is empty                                                               
+                                                                                
+        press 1: push   press 2:pop                                                     
+        press 3:peek    press 4:exit                                                    
+        exit the program 
+    </pre>
+    
+</body>
+</html>
