@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include&ltstdio.h>
+        #include&ltconio.h>
+        //diff of string ascii value
+         int diff(char str1,char str2)
+         {
+         return(str1-str2);
+         }
+         void main()
+         {
+         char str[30],str2[30];
+         int i;
+         clrscr();
+         printf("enter 1 string:\n");
+         gets(str);
+         printf("enter 2 string:\n");
+         gets(str2);
+         for(i=0;str[i] && str2[i];i++)
+         {
+         printf("%c-%c=%d\n",str[i],str2[i],diff(str[i],str2[i]));
+         }
+         delay(5000);
+         }
+    </pre>
+    <h3>OUTPUT:</h3>
+    <pre>
+        enter 1 string:                                                                 
+        A                                                                               
+        enter 2 string:                                                                 
+        Z                                                                               
+        A-Z=-25   
+    </pre>
+</body>
+</html>

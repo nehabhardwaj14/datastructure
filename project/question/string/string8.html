@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include&ltstdio.h>
+            #include&ltconio.h>
+            // concatenate two string in another string
+        char* concat(char str1[],char str2[])
+        {
+          int len,i;
+          for(len=0;str1!='\0';len++)
+           for(i=0;str2!='\0';i++)
+        {
+          str1[len++]=str2[i];
+        }
+        str1[len]='\0';
+        return str1;
+        }
+    
+       void main()
+         {
+           char string1[20],string2[20];
+           clrscr();
+           printf("enter first string:\n");
+           gets(string1);
+           printf("enter second string:\n");
+           gets(string2);
+          // concat(str1,str2);
+           printf("concatenated string: %s\n",concat(string1,string2));
+           delay(5000);
+         }
+    </pre>
+    <h3>OUTPUT:</h3>
+    <pre>
+        enter first string:
+        Hello                                                                           
+        enter second string :                                                            
+        World                                                                           
+        Concatinated String: HelloWorld
+    </pre>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include&ltstdio.h>
+            #include&ltconio.h>
+            // copy string into another string
+              char* strcopy(char dest[],char src[])
+              {
+              int i;
+              for(i=0;src!='\0';i++){
+               dest[i]=src[i];
+               }
+               dest[i]=src[i];
+               return dest;
+               }
+               void main()
+               {
+               char str1[30],str2[30];
+               clrscr();
+               printf("enter string:\n");
+               gets(str);
+              // strcopy(str1,str2);
+               printf("copied string is:%s\n",strcopy(copiedstr,str));
+               delay(5000);
+               }
+    </pre>
+    <h3>OUTPUT:</h3>
+    <pre>
+        enter string:
+        Hello World                                                                       
+        copied string is:
+        Hello World
+    </pre>
+</body>
+</html>

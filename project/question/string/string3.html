@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include&ltstdio.h>
+#include&ltconio.h>
+#include&ltctype.h>
+
+   //convert into sentence case
+     void sentenceCase(char *str)
+     {
+	int i=0;
+	int capitalize=1;
+	while(str[i]){
+	 if(isspace(str[i]))
+	 {
+	 capitalize=1;
+	 }
+	 else if(capitalize)
+	 {
+	 str[i]=toupper(str[i]);
+	 capitalize=0;
+	 }
+	 else{
+	 str[i]=tolower(str[i]);
+	 }
+	 i++;}}
+	void main()
+	{
+	char str[20];
+	clrscr();
+	printf("enter string:\n");
+	gets(str);
+	 sentenceCase(str);
+	 printf("%s\n",str);
+	 delay(5000);
+	 }
+    </pre>
+    <h3>OUTPUT:</h3>
+    <pre>
+        enter string:                                                                   
+        THIS IS A SENTENCE                                                              
+        This Is A Sentence
+    </pre>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include&ltstdio.h>
+            #include&ltconio.h>
+             //enter string and character and print index number
+               int search(char str[],char key)
+               {
+               int i;
+               for(i=0;str[i]!='\0';i++)
+               {
+                 if(key==str[i])
+                  {
+                   return i;
+                  }
+                }
+                  return -1;
+               }
+               void main()
+               {
+               char str[30];
+               int index;
+               clrscr();
+               printf("enter string:\n");
+               gets(str);
+               printf("enter a character to find:");
+               index=search(str,getche());
+               if(index==-1)
+               printf("\ncharacter not found");
+               else
+               printf("\n character is found at index : %d\n",index);
+               delay(5000);
+               }
+    </pre>
+    <h3>OUTPUT:</h3>
+    <pre>
+        enter string:                                                                   
+        hello world                                                                     
+        enter a character to find:w                                                     
+        character is found at index : 6
+    </pre>
+</body>
+</html>

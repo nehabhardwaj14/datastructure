@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include&ltstdio.h>
+        #include&ltconio.h>
+        // enter a string and copy reverse of string
+          char* strrevcpy(char dest[],char src[])
+           {
+             int i=0,j=0;
+             while(src[j]!='\0')
+             {
+              dest[i++]=src[--j];
+             }
+             dest[i]=src[i];
+             return dest;
+            }
+            void main()
+            {
+             char str[30],copiedstr[30];
+             clrscr();
+             printf("enter string:\n");
+             gets(str);
+             printf("copied string is : %s\n",strrevcpy(copiedstr,str));
+             delay(5000);
+             }
+        
+    </pre>
+    <h3>OUTPUT:</h3>
+    <pre>
+        enter string:                                                                   
+        hello                                                                           
+        copied string is : olleh
+    </pre>
+</body>
+</html>

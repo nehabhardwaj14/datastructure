@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include&ltstdio.h>
+       #include&ltconio.h>
+       // final length of a string
+    long length(char str[])
+     {
+       int i;
+       for(i=0;str[i]!='\0';i++) ;
+
+	 return i;
+
+      }
+    void main()
+     {
+	char str[20];
+	clrscr();
+	printf("enter a string:\n");
+	gets(str);
+	printf("length of the string is: %ld\n",length(str));
+	delay(5000);
+     }
+    </pre>
+    <h3>OUTPUT:</h3>
+    <pre>
+        enter a string:                                                                 
+        hello world                                                                     
+        length of the string is: 11
+    </pre>
+</body>
+</html>

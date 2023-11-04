@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include&ltstdio.h>
+        #include&ltconio.h>
+        #include&ltctype.h>
+        #include&ltstring.h>
+           // convert into title case
+              void titleCase(char *str)
+             {
+               int i=0;
+               int capitalize=1;                  
+               while(str[i])
+               {
+                 if((str[i]==0))
+                 {
+                   capitalize=1;
+                 }
+                 else if(capitalize)
+                 {
+                   str[i]=toupper(str[i]);
+                   capitalize=0;
+                 }
+                 else
+                 {
+                   str[i]=tolower(str[i]);
+                 }
+                 i++;
+               }
+             }
+            void main()
+            {
+              char str[30];
+              clrscr();
+               printf("enter a string:\n");
+               gets(str);
+             titleCase(str);
+             printf(" title case:\n%s",str);
+             delay(5000);
+            }
+    </pre>
+    <h3>OUTPUT:</h3>
+    <pre>
+        nter a string:                                                                 
+        THIS IS A SENTENCE                                                              
+         title case:                                                                    
+        This is a sentence 
+    </pre>
+</body>
+</html>

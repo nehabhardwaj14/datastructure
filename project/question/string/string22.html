@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="2darray.css">
+</head>
+<body>
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include &ltstdio.h>
+            #include&ltconio.h>
+            #include&ltdos.h>
+            char *strsort(char str[])
+            {
+                char temp;
+                int i, j;
+                for (i = 0; str[i]; i++)
+                {
+                    for (j = i+1; str[j]; j++)
+                    {
+                        if (str[i] > str[j])
+                        {
+                            temp = str[i];
+                            str[i] = str[j];
+                            str[j] = temp;
+                        }
+                    }
+                    if (str[i + 2] == '\0')
+                        break;
+                }
+            
+                return str;
+            }
+            void main()
+            {
+                char str[30];
+                clrscr();
+                printf("Enter a String\n");
+                gets(str);
+                printf("Sorted String: %s", strsort(str));
+                delay(5000);
+            }
+    </pre>
+    <h3>OUTPUT:</h3>
+    <pre>
+        Enter a String
+        HELLOWORLD                                                                         
+        Sorted String: DEHLLLOORW
+    </pre>
+</body>
+</html>

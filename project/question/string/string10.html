@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include&ltstdio.h>
+        #include&ltconio.h>
+          // print index and charcter
+          char charind(char str[],int index)
+          {
+           int i;
+           for(i=0;str[i]!='\0';i++);
+           if(index>i-1 || index &lt 0)
+           {
+            return'\0';
+            }
+            return str[index];
+          }
+           void main()
+           {
+            char str[30],ch;
+            int index;
+            clrscr();
+            printf("enter string:\n");
+            gets(str);
+            printf("enter index number\n");
+            scanf("%d",&index);
+            ch=charind(str,index);
+            if(ch=='\0')
+            printf("invalid index number\n");
+            else
+            printf("the character is %c\n",ch,index);
+            delay(5000);
+            }
+    </pre>
+    <h3>OUTPUT:</h3>
+    <pre>
+        enter string:                                                                   
+        hello world                                                                     
+        enter index number                                                              
+        6                                                                               
+        the character is w
+    </pre>
+</body>
+</html>

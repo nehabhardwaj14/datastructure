@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include&ltstdio.h>
+            #include&ltconio.h>
+            #include&ltdos.h>
+            void main(){
+                char str[30];
+                int  i = 0;
+                clrscr();
+                printf("Enter a String\n");
+                gets(str);
+                printf("Printing each character in new line\n");
+                while(str[i] != '\0')
+                {
+                    printf("%c\n", str[i++]);
+                } 
+                delay(5000);
+            }
+    </pre>
+    <h3>OUTPUT:</h3>
+    <pre>
+        Enter a String
+        Hello World                                                                     
+        Printing each character in new line                                             
+        H                                                                               
+        e                                                                               
+        l                                                                               
+        l                                                                               
+        o                                                                               
+                                                                                        
+        W                                                                               
+        o                                                                               
+        r                                                                               
+        l                                                                               
+        d
+    </pre>
+</body>
+</html>

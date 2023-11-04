@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROGRAM: </h1>
+    <pre>
+        #include&ltstdio.h>
+#include&ltconio.h>
+  // convert string into toggle case
+     char toggle(char str[])
+      {
+	int i;
+	for(i=0;str[i]!='\0';i++)
+	{
+	   if(str[i]>='A' && str[i]&lt='Z')
+	      str[i]+=32;
+	   else if(str[i]>='a' && str[i]&lt='z')
+	      str[i]-=32;
+	}
+
+      }
+     void main()
+      {
+	 char str[20];
+	 clrscr();
+	 printf("enter a string:\n");
+	 gets(str);
+	 toggle(str);
+	 printf(" toggle case: %s\n",str);
+	 delay(5000);
+      }
+    </pre>
+    <h3>OUTPUT:</h3>
+    <pre>
+        enter a string:                                                                 
+        hello WORld                                                                     
+         toggle case: HELLO worLD
+    </pre>
+</body>
+</html>
